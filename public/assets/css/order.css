@@ -1,0 +1,270 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f7ff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .order-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom right, #f7f7ff, #ece6ff);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 360px;
+    background: #a580e2;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  
+  .order-form {
+    width: 100%;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin-bottom: 18px;
+    text-align: left;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    background: #fff;
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+  
+  textarea {
+    height: 90px;
+    resize: none;
+  }
+  
+  .order-btn {
+    width: 100%;
+    background-color: #6b4cc6;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .order-btn:hover {
+    background-color: #5a3cad;
+  }
+  
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a781e6;
+    border-radius: 16px;
+    padding: 32px 24px;
+    max-width: 420px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .checkmark-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  .checkmark-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .checkmark {
+    stroke: white;
+    stroke-width: 5;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: draw 0.6s ease forwards;
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  .confirmation h3 {
+    font-size: 22px;
+    margin: 0 0 10px;
+  }
+  
+  .confirmation p {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+  
+  .whatsapp-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  
+  .whatsapp-contact img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .wa-number {
+    font-weight: 500;
+    color: white;
+  }
+  
+  .small-text {
+    font-size: 12px;
+    color: #f2f2f2;
+    margin-top: 12px;
+  }
+  
+  .back-home {
+    margin-top: 24px;
+    background-color: white;
+    color: #6b4cc6;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .back-home:hover {
+    background-color: #f0ebff;
+  }
+  
+  
+  .payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  
+  .payment-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 2px solid #6b4cc6;
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: #333;
+    transition: all 0.3s;
+  }
+  
+  .payment-option:hover {
+    background-color: #f0ebff;
+  }
+  
+  .payment-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .payment-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .payment-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #6b4cc6;
+  }
+  
+  .phone-number {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+
+  #planDetails {
+    background-color: #f8f6ff;
+    border: 2px solid #6b4cc6;
+    border-radius: 10px;
+    padding: 5px 5px;
+    box-shadow: 0 4px 8px rgba(107, 76, 198, 0.1);
+    color: #444;
+    font-weight: 150;
+    font-size: 12px;
+    margin-bottom: 6px;
+    margin-right: 10px;
+  }
+  
+  
+  

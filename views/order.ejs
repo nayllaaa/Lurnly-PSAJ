@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lurnly - Upgrade Your Skill</title>
+  <link rel="icon" href="/assets/images/Lurnly Logo - Original - 5000x5000.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/order.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    .payment-methods, .upload-section, .confirmation-section {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border: 2px solid #6b4cc6;
+      border-radius: 10px;
+      padding: 12px 20px;
+      color: #333;
+    }
+
+    .payment-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .payment-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .payment-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #6b4cc6;
+    }
+
+    .phone-number {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .upload-section label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .upload-section input[type="file"] {
+      padding: 10px;
+      border: 2px solid #6b4cc6;
+      border-radius: 8px;
+    }
+
+    .confirm-btn {
+      background-color: #6b4cc6;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .confirmation {
+      display: none;
+      text-align: center;
+      color: #fff;
+      margin-top: 30px;
+    }
+
+    .checkmark-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #28a745;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      animation: pop 0.4s ease forwards;
+    }
+
+    .checkmark {
+      stroke: #fff;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: draw 0.5s ease forwards 0.4s;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .whatsapp-contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .whatsapp-contact img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .small-text {
+      font-size: 12px;
+      margin-top: 8px;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="order-section">
+    <div class="container">
+      <h2>Place Your Order</h2>
+      <p>Fill in the form below to complete your order.</p>
+
+      <div class="order-form">
+        <form id="orderForm" action="/submit-order" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Your E-mail</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+62..." required />
+            </div>
+            <div class="form-group">
+              <label for="plan">Select Package</label>
+              <select id="plan" name="plan" required>
+                <option value="" disabled selected>Choose one</option>
+                <option value="basic">Basic Plan</option>
+                <option value="premium">Premium Plan</option>
+                <option value="vip">VIP Plan</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group full-width" id="planDetails" style="display: none;">
+            <label>Plan Details</label>
+            <div id="priceInfo" style="font-weight: bold; margin-bottom: 8px;"></div>
+            <ul id="benefitList" style="padding-left: 20px; margin: 0;"></ul>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="message">Additional Notes</label>
+            <textarea id="message" name="message" placeholder="Enter any special requests..."></textarea>
+          </div>
+
+          <button type="submit" class="order-btn">Submit Order</button>
+        </form>
+
+        <!-- Payment Options Section -->
+        <div class="payment-methods" id="paymentOptions">
+          <div class="payment-option">
+            <div class="payment-left">
+              <img src="/assets/images/ShopeePay Logo -  (Koleksilogo.com).png" alt="ShopeePay" class="payment-logo" />
+              <span class="payment-name">ShopeePay</span>
+            </div>
+            <span class="phone-number">082257991113</span>
+          </div>
+
+          <div class="payment-option">
+            <div class="payment-left">
+              <img src="/assets/images/Logo DANA -  (Koleksilogo.com).png" alt="DANA" class="payment-logo" />
+              <span class="payment-name">DANA</span>
+            </div>
+            <span class="phone-number">082257991113</span>
+          </div>
+
+          <div class="payment-option">
+            <div class="payment-left">
+              <img src="/assets/images/Logo GoPay  -  (Koleksilogo.com).png" alt="GoPay" class="payment-logo" />
+              <span class="payment-name">GoPay</span>
+            </div>
+            <span class="phone-number">082257991113</span>
+          </div>
+        </div>
+
+        <!-- Upload Screenshot Section -->
+        <div class="upload-section" id="uploadSection">
+          <label for="paymentProof" style="color: #fff;">Upload Payment Screenshot</label>
+          <input type="file" id="paymentProof" name="paymentProof" accept="image/*" required />
+          <button class="confirm-btn" id="confirmBtn">Confirm Payment</button>
+        </div>
+
+        <!-- Confirmation Section -->
+        <div class="confirmation" id="confirmationSection">
+          <div class="checkmark-circle">
+            <svg viewBox="0 0 52 52" class="checkmark-icon">
+              <path class="checkmark" fill="none" d="M14 27 l10 10 l20 -20" />
+            </svg>
+          </div>
+          <h3>Order Submitted!</h3>
+          <p>Silahkan tunggu salah satu dari kami untuk menghubungi kamu dalam waktu 0-3 jam.</p>
+        
+          <div class="whatsapp-contact">
+            <img src="assets/images/GKL9_WhatsApp - Koleksilogo.com.png" alt="WhatsApp Logo" />
+            <span class="wa-number">082257991113</span>
+          </div>
+        
+          <p class="small-text">(Jika ingin menanyakan sesuatu segera hubungi nomor di atas ya!)</p>
+        
+          <button class="back-home" onclick="window.location.href='home'">Back to Home</button>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("orderForm");
+    const paymentOptions = document.getElementById("paymentOptions");
+    const uploadSection = document.getElementById("uploadSection");
+    const confirmBtn = document.getElementById("confirmBtn");
+    const paymentProof = document.getElementById("paymentProof");
+    const confirmationSection = document.getElementById("confirmationSection");
+
+    const planSelect = document.getElementById("plan");
+    const priceInfo = document.getElementById("priceInfo");
+    const benefitList = document.getElementById("benefitList");
+    const planDetails = document.getElementById("planDetails");
+
+    const planInfo = {
+      basic: {
+        price: "Rp450.000",
+        benefits: [
+          "Akses ke grup komunitas (diskusi & tanya jawab)",
+          "1x sesi review portofolio mini secara grup",
+          "Progress tracking mingguan via Google Sheet"
+        ]
+      },
+      premium: {
+        price: "Rp500.000",
+        benefits: [
+          "Semua benefit Basic",
+          "3x sesi review portofolio oleh mentor",
+          "Template & tools premium untuk latihan project",
+          "Prioritas tanya-jawab via grup komunitas"
+        ]
+      },
+      vip: {
+        price: "Rp650.000",
+        benefits: [
+          "Semua benefit Premium",
+          "1-on-1 session (2x) dengan mentor pilihan",
+          "Konsultasi karier / portfolio audit pribadi",
+          "Review CV & profil LinkedIn",
+          "Bonus kelas eksklusif: Freelancing & Karier Tech di Startup"
+        ]
+      }
+    };
+
+    planSelect.addEventListener("change", function () {
+      const selectedPlan = planSelect.value;
+      if (selectedPlan && planInfo[selectedPlan]) {
+        priceInfo.textContent = "Harga: " + planInfo[selectedPlan].price;
+        benefitList.innerHTML = "";
+        planInfo[selectedPlan].benefits.forEach(benefit => {
+          const li = document.createElement("li");
+          li.textContent = "✅ " + benefit;
+          benefitList.appendChild(li);
+        });
+        planDetails.style.display = "block";
+      } else {
+        priceInfo.textContent = "";
+        benefitList.innerHTML = "";
+        planDetails.style.display = "none";
+      }
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.querySelector("h2").textContent = "Order Received!";
+      document.querySelector("p").textContent = "Please choose one of payment account below and upload your payment proof.";
+      form.style.display = "none";
+      paymentOptions.style.display = "flex";
+      uploadSection.style.display = "flex";
+    });
+
+    confirmBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (paymentProof.files.length === 0) {
+    alert("Upload your payment proof first!");
+  } else {
+    document.querySelector("h2").textContent = "Thank You!";
+    document.querySelector("p").textContent = "Thank you for trusting us! We hope you're having your best time with us :D";
+    paymentOptions.style.display = "none";
+    uploadSection.style.display = "none";
+    confirmationSection.style.display = "flex";
+  }
+    });
+  </script>
+</body>
+</html>

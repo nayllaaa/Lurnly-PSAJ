@@ -1,0 +1,205 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 500px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px; /* Menambahkan jarak antara label dan input */
+}
+
+/* Input Fields */
+.input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Memberikan jarak antar input */
+}
+
+/* Common Box Style for Login & Register */
+.box {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Left Side: Form */
+.form-container {
+    width: 50%;
+    padding: 40px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.highlight {
+    color: #7D55F6;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Name Input (for Register Page) */
+.name-container {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group {
+    width: 50%;
+}
+
+/* Password Field with Eye Icon */
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Terms and Conditions */
+.terms-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Buttons */
+.button {
+    width: 100%;
+    background: #816DFA;
+    color: white;
+    padding: 10px ;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #6a49a0;
+}
+
+/* Google Sign-in Button */
+.google-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.google-button:hover {
+    background: #f1f1f1;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Separator */
+.separator {
+    text-align: center;
+    color: #666;
+    margin: 15px 0;
+}
+
+/* Register/Login Link */
+.text-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.text-link a {
+    color: #7D55F6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text-link a:hover {
+    text-decoration: underline;
+}
+
+/* Right Side: Image */
+.image-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}

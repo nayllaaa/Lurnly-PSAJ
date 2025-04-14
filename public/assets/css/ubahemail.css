@@ -1,0 +1,71 @@
+/* CSS untuk halaman Ubah Email */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    background-color: #7a6ad8; /* Background warna ungu */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container utama */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Card/form box */
+.card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+}
+
+/* Judul */
+h2 {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+/* Label form */
+.form-ubah-email .form-label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+/* Input form */
+.form-ubah-email .form-control {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 14px;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+/* Input saat focus */
+.form-ubah-email .form-control:focus {
+    border-color: #7a6ad8;
+    box-shadow: 0 0 8px rgba(122, 106, 216, 0.3);
+}
+
+/* Tombol */
+.form-ubah-email .btn {
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #7a6ad8;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover tombol */
+.form-ubah-email .btn:hover {
+    background-color: #685ac3;
+}
