@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page</title>
+    <title>Lurnly - Upgrade Your Skill</title>
+    <link rel="icon" href="/assets/images/Lurnly Logo - Original - 5000x5000.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
@@ -13,25 +14,25 @@
             <div class="form-container">
                 <h2 class="title">Create an <span class="highlight">Account</span></h2>
                 <p class="subtitle">Join us and explore new stories.</p>
-                <form>
+                <form id="registerForm">
                     <div class="name-container">
                         <div class="input-group">
                             <label>First Name</label>
-                            <input type="text" class="input" placeholder="First Name">
+                            <input type="text" id="firstName" class="input" placeholder="First Name" required>
                         </div>
                         <div class="input-group">
                             <label>Last Name</label>
-                            <input type="text" class="input" placeholder="Last Name">
+                            <input type="text" id="lastName" class="input" placeholder="Last Name" required>
                         </div>
                     </div>
                     
                     <label>Email</label>
-                    <input type="email" class="input" placeholder="Enter your email">
+                    <input type="email" id="email" class="input" placeholder="Enter your email" required>
                     
                     <label>Password</label>
-                    <input type="password" class="input" placeholder="Enter your password">
+                    <input type="password" id="password" class="input" placeholder="Enter your password" required>
 
-                    <a href="/login" class="button">Create an Account</a>
+                    <button type="submit" class="button">Create an Account</button>
                 </form>
 
                 <p class="text-link">Already have an account? <a href="/login">Login</a></p>
@@ -43,5 +44,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!firstName || !lastName || !email || !password) {
+                e.preventDefault(); // mencegah form terkirim
+                alert("Please fill in all fields.");
+            } else {
+                // Simulasi redirect ke login (jika menggunakan server atau SPA bisa diganti sesuai kebutuhan)
+                window.location.href = "/login";
+                e.preventDefault(); // untuk demo saja, hilangkan ini kalau pakai backend
+            }
+        });
+    </script>
 </body>
 </html>

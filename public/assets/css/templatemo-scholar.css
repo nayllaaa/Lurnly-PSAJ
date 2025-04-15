@@ -1656,7 +1656,7 @@ Footer Style
 */
 
 footer {
-  margin-top: 80px;
+  margin-top: 150px;
   position: relative;
   background-color: #7a6ad8;
   border-radius: 80px 80px 0 0;
@@ -1709,7 +1709,9 @@ footer {
 .footer-right {
   display: flex;
   gap: 50px;
+  font-size: 30px;
 }
+
 
 .footer-section {
   display: flex;
@@ -1727,7 +1729,7 @@ footer {
 .footer-section a {
   color: #fff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 18px;
   transition: opacity 0.3s;
 }
 

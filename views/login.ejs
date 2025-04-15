@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    
+    <title>Lurnly - Upgrade Your Skill</title>
+    <link rel="icon" href="/assets/images/Lurnly Logo - Original - 5000x5000.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
@@ -14,19 +14,17 @@
             <div class="form-container">
                 <h2 class="title">Login to Your <span class="highlight">Account</span></h2>
                 <p class="subtitle">Welcome back! Please enter your details.</p>
-                <form>
+                <form id="loginForm">
                     <label>Email</label>
-                    <input type="email" class="input" placeholder="Enter your email">
+                    <input type="email" id="loginEmail" class="input" placeholder="Enter your email" required>
                     
                     <label>Password</label>
                     <div class="password-container">
-                        <input type="password" class="input" placeholder="Enter your password">
+                        <input type="password" id="loginPassword" class="input" placeholder="Enter your password" required>
                     </div>
 
-                    <a href="/home" class="button">Login</a>
+                    <button type="submit" class="button">Login</button>
                 </form>
-
-               
 
                 <p class="text-link">Don't have an account? <a href="/register">Register</a></p>
             </div>
@@ -37,5 +35,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+
+            if (!email || !password) {
+                e.preventDefault();
+                alert("Please fill in both email and password.");
+            } else {
+                // Redirect ke home (simulasi)
+                window.location.href = "/home";
+                e.preventDefault(); // hapus baris ini kalau sudah pakai backend
+            }
+        });
+    </script>
 </body>
 </html>
