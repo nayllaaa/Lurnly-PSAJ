@@ -418,7 +418,7 @@ https://templatemo.com/tm-586-scholar
               <h4>Nabilah Syahirah</h4>
               <ul class="social-icons">
                 <li>
-                  <a href="https://www.instagram.com//" target="_blank">
+                  <a href="https://www.instagram.com/hiraares_/" target="_blank">
                     <i class="fab fa-instagram"></i>
                   </a>
                 </li>
@@ -440,7 +440,7 @@ https://templatemo.com/tm-586-scholar
               <h4>Nur Ayu</h4>
               <ul class="social-icons">
                 <li>
-                  <a href="https://www.instagram.com//" target="_blank">
+                  <a href="https://www.instagram.com/nnurararaaa_/" target="_blank">
                     <i class="fab fa-instagram"></i>
                   </a>
                 </li>
@@ -654,6 +654,11 @@ https://templatemo.com/tm-586-scholar
                   </fieldset>
                 </div>
                 <div class="col-lg-12">
+                  <!-- Message box muncul di sini -->
+                  <div id="message-box" style="display:none; color: rgb(0, 0, 0); margin-bottom: 10px;">
+                    Pesan terkirim!
+                  </div>
+                
                   <fieldset>
                     <button type="submit" id="form-submit" class="orange-button">Kirim Pesan Sekarang</button>
                   </fieldset>
@@ -701,6 +706,33 @@ https://templatemo.com/tm-586-scholar
       <p>© 2025 Lurnly. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    document.getElementById("form-submit").addEventListener("click", function(event) {
+      event.preventDefault(); // Biar nggak submit langsung
+      const messageBox = document.getElementById("message-box");
+      messageBox.style.display = "block";
+  
+      // Sembunyikan lagi setelah 3 detik (bisa dihapus kalau mau tetap tampil)
+      setTimeout(() => {
+        messageBox.style.display = "none";
+      }, 3000);
+    });
+  </script>
+
+<style>
+  .events_item {
+    border: 2px solid #ddd; /* warna dan ketebalan border */
+    border-radius: 10px;     /* biar sudutnya agak melengkung */
+    padding: 15px;           /* kasih ruang dalam */
+    transition: 0.3s ease;   /* efek halus kalau hover */
+  }
+
+  .events_item:hover {
+    border-color: #7a6ad8;   /* warna saat hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* efek shadow saat hover */
+  }
+</style>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->

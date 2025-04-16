@@ -87,6 +87,7 @@
             <h5 class="mb-4">Navigasi Profil</h5>
             <ul class="list-group" id="profileNav">
               <button class="list-group-item active text-start" data-target="profil-tab"><i class="fa fa-user me-2"></i> Profil Saya</button>
+              <button class="list-group-item text-start" data-target="transaksi-tab"><i class="fa fa-receipt me-2"></i> Riwayat Transaksi</button>
             </ul>
           </div>
         </div>
@@ -158,65 +159,71 @@
                 <button type="submit" class="btn btn-info text-white fw-semibold px-4 mt-2">Simpan Perubahan</button>
               </div>
             </div>
-            
-
-          <!-- Tab Riwayat Transaksi -->
-          <div id="transaksi-tab" class="tab-content d-none profile-content p-4 bg-white rounded shadow-sm">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h4>Transaksi Saya</h4>
-              <div>
-                <label for="jenis-produk" class="form-label text-muted small">Jenis Produk</label>
-                <select id="jenis-produk" class="form-select border border-info rounded">
-                  <option>Semua Produk</option>
-                  <option>Bootcamp</option>
-                  <option>Mentoring</option>
-                </select>
-              </div>
-            </div>
-            <div class="text-center">
-              <img src="assets/img/empty-transaksi.svg" alt="No transaction" style="max-width: 150px;">
-              <p class="text-muted mt-2">Sepertinya kamu belum melakukan transaksi untuk produk ini</p>
-            </div>
-            <div class="d-flex justify-content-center gap-2 mt-3">
-              <button class="btn btn-outline-secondary btn-sm" disabled><i class="fa fa-angle-left me-1"></i> Sebelumnya</button>
-              <button class="btn btn-outline-secondary btn-sm" disabled>Selanjutnya <i class="fa fa-angle-right ms-1"></i></button>
-            </div>
           </div>
+                <!-- Tab Riwayat Transaksi -->
+      <div id="transaksi-tab" class="tab-content profile-content p-4 bg-white rounded shadow-sm" style="display: none;">
+        <h4 class="mb-4">Riwayat Transaksi</h4>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th>No</th>
+                <th>Tanggal</th>
+                <th>Deskripsi</th>
+                <th>Paket</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>15 April 2025</td>
+                <td>Pembelian Kelas Web Design</td>
+                <td>Premium Plan</td>
+                <td><span class="badge bg-success">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>2 April 2025</td>
+                <td>Pembelian Kelas Data Analyst</td>
+                <td>Basic Plan</td>
+                <td><span class="badge bg-success">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>25 Maret 2025</td>
+                <td>Pembelian Kelas Basic Programming</td>
+                <td>VIP Plan</td>
+                <td><span class="badge bg-danger">Gagal</span></td>
+              </tr>
+            </tbody>
+          </table>
+    
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Script Switch Tab -->
   <script>
-    document.querySelectorAll('.list-group-item').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.list-group-item').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const target = button.getAttribute('data-target');
-        document.querySelectorAll('.tab-content').forEach(tab => {
-          tab.classList.add('d-none');
-        });
-        document.getElementById(target).classList.remove('d-none');
+    const navButtons = document.querySelectorAll('#profileNav button');
+    const tabContents = document.querySelectorAll('.tab-content');
+  
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Hapus "active" dari semua button
+        navButtons.forEach(b => b.classList.remove('active'));
+  
+        // Sembunyikan semua tab
+        tabContents.forEach(tab => tab.style.display = 'none');
+  
+        // Aktifkan tab yang diklik
+        const targetId = btn.getAttribute('data-target');
+        document.getElementById(targetId).style.display = 'block';
+        btn.classList.add('active');
       });
     });
-
-    const uploadFotoInput = document.getElementById('uploadFoto');
-    const previewFoto = document.getElementById('previewFoto');
-
-    uploadFotoInput.addEventListener('change', function () {
-    const file = this.files[0];
-    if (file && file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        previewFoto.src = e.target.result; // tampilkan gambar yang dipilih
-      };
-      reader.readAsDataURL(file);
-    }
-  });
   </script>
-
+  
 <footer>
   <div class="footer-flex">
     <div class="footer-left">

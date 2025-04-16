@@ -2304,4 +2304,13 @@ body {
   transform: scale(1.1);
 }
 
+.plan-card {
+  margin-top: 20px;
+}
+
+.plan-card h4 {
+  margin-bottom: 10px;
+}
+
+
 

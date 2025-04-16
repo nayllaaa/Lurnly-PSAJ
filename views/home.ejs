@@ -633,10 +633,9 @@ https://templatemo.com/tm-586-scholar
       <div class="row">
         <div class="col-lg-6  align-self-center">
           <div class="section-heading">
-            <h6>Contact Us</h6>
-            <h2>Butuh bantuan? Hubungi kami kapan saja!</h2>
-            <p>Terima kasih telah menggunakan website kami! Kami menyediakan les upgrade skill terbaik yang bisa kamu gunakan. Dukung kami dengan membagikan website ini kepada teman-temanmu!</p>
-
+            <h6>Ulasan</h6>
+            <h2>Merasa puas dengan kami? Yuk dukung kami dengan memberikan ulasan!</h2>
+            <p>Terima kasih telah mengunjungi atau menggunakan website kami. Sedikit ulasan dari kalian akan sangat membantu kami dalam peningkatan performa.
           </div>
         </div>
         <div class="col-lg-6">
@@ -659,10 +658,16 @@ https://templatemo.com/tm-586-scholar
                   </fieldset>
                 </div>
                 <div class="col-lg-12">
+                  <!-- Message box muncul di sini -->
+                  <div id="message-box" style="display:none; color: rgb(0, 0, 0); margin-bottom: 10px;">
+                    Ulasan terkirim!
+                  </div>
+                
                   <fieldset>
-                    <button type="submit" id="form-submit" class="orange-button">Kirim Pesan Sekarang</button>
+                    <button type="submit" id="form-submit" class="orange-button">Kirim Ulasan Sekarang</button>
                   </fieldset>
                 </div>
+                
               </div>
             </form>
           </div>
@@ -706,6 +711,35 @@ https://templatemo.com/tm-586-scholar
       <p>© 2025 Lurnly. All rights reserved.</p>
     </div>
   </footer>
+  
+  <script>
+    document.getElementById("form-submit").addEventListener("click", function(event) {
+      event.preventDefault(); // Biar nggak submit langsung
+      const messageBox = document.getElementById("message-box");
+      messageBox.style.display = "block";
+  
+      // Sembunyikan lagi setelah 3 detik (bisa dihapus kalau mau tetap tampil)
+      setTimeout(() => {
+        messageBox.style.display = "none";
+      }, 3000);
+    });
+    
+  </script>
+
+<style>
+  .events_item {
+    border: 2px solid #ddd; /* warna dan ketebalan border */
+    border-radius: 10px;     /* biar sudutnya agak melengkung */
+    padding: 15px;           /* kasih ruang dalam */
+    transition: 0.3s ease;   /* efek halus kalau hover */
+  }
+
+  .events_item:hover {
+    border-color: #7a6ad8;   /* warna saat hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* efek shadow saat hover */
+  }
+</style>
+
   
   
   
